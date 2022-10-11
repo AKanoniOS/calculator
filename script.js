@@ -1,7 +1,11 @@
 let display = document.querySelector('.display')
 
 function updateDisplay(input){
-    display.textContent = `${input}`
+    display.textContent += input
+}
+
+function clearDisplay(input){
+    display.textContent = ``
 }
 
 let numbers = document.querySelectorAll('.num')
@@ -16,5 +20,6 @@ numbers.forEach(item => {
 let clear = document.querySelector('.clear')
 
 clear.addEventListener('click', () => {
-    updateDisplay('')
+    clearDisplay('')
 })
+
