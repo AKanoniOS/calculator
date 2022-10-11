@@ -4,10 +4,17 @@ function updateDisplay(input){
     display.textContent = `${input}`
 }
 
-let gridItems = document.querySelectorAll('.grid-item')
+let numbers = document.querySelectorAll('.num')
 
-gridItems.forEach(item => {
+numbers.forEach(item => {
     item.addEventListener('click', () => {
         updateDisplay(item.textContent)
     })
+})
+
+
+let clear = document.querySelector('.clear')
+
+clear.addEventListener('click', () => {
+    updateDisplay('')
 })
