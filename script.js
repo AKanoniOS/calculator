@@ -1,6 +1,7 @@
 let display = document.querySelector('.display')
 let firstNum = 0
 let secondNum = 0
+let selectedOperator = ''
 let firstNumDisplayTest = document.querySelector('.firstNum')
 let secondNumDisplayTest = document.querySelector('.secondNum')
 let selectedOperatorDisplayTest = document.querySelector('.selectedOperator')
@@ -24,10 +25,10 @@ function clearDisplay(input){
     display.textContent = 0
     firstNum = 0
     secondNum = 0
-    selectedOperatorDisplayTest = ''
+    selectedOperator = ''
     firstNumDisplayTest.textContent = firstNum
     secondNumDisplayTest.textContent = secondNum
-    selectedOperatorDisplayTest = selectedOperatorDisplayTest
+    selectedOperatorDisplayTest.textContent = selectedOperator
 }
 
 let numbers = document.querySelectorAll('.num')
@@ -48,6 +49,7 @@ clear.addEventListener('click', () => {
 function loadFirstNum() {
     firstNum = display.textContent
     firstNumDisplayTest.textContent = `${firstNum}`
+    
 }
 
 function addFunc(){
