@@ -95,13 +95,13 @@ divide.addEventListener('click', divideFunc)
 
 function total(a,b) {
     if (selectedOperator == 'add') {
-        return a + b
+        return +a + +b
     } else if (selectedOperator == 'subtract') {
-        return a - b
+        return +a - +b
     } else if (selectedOperator == 'multiply') {
-        return a * b
+        return +a * +b
     } else if (selectedOperator == 'divide') {
-        return a / b
+        return +a / +b
     }
 }
 
