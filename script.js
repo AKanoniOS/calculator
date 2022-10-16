@@ -21,7 +21,7 @@ function updateDisplay(input){
     }
 }
 
-function clearDisplay(input){
+function clearFunc(){
     display.textContent = 0
     firstNum = 0
     secondNum = 0
@@ -31,10 +31,17 @@ function clearDisplay(input){
     selectedOperatorDisplayTest.textContent = selectedOperator
 }
 
+function resetDisplay() {
+    display.textContent = 0
+}
+
 let numbers = document.querySelectorAll('.num')
 
 numbers.forEach(item => {
     item.addEventListener('click', () => {
+        if (selectedOperator.length > 1) {
+            resetDisplay()
+        }
         updateDisplay(item.textContent)
     })
 })
@@ -43,7 +50,7 @@ numbers.forEach(item => {
 let clear = document.querySelector('.clear')
 
 clear.addEventListener('click', () => {
-    clearDisplay('')
+    clearFunc('')
 })
 
 function loadFirstNum() {
