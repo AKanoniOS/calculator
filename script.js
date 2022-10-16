@@ -92,3 +92,26 @@ add.addEventListener('click', addFunc)
 subtract.addEventListener('click', subtractFunc)
 multiply.addEventListener('click', multiplyFunc)
 divide.addEventListener('click', divideFunc)
+
+function total(a,b) {
+    if (selectedOperator == 'add') {
+        return a + b
+    } else if (selectedOperator == 'subtract') {
+        return a - b
+    } else if (selectedOperator == 'multiply') {
+        return a * b
+    } else if (selectedOperator == 'divide') {
+        return a / b
+    }
+}
+
+function loadSecondNum() {
+    secondNum = display.textContent
+    secondNumDisplayTest.textContent = `${secondNum}`
+    newNum = total(firstNum,secondNum)
+    display.textContent = newNum
+}
+
+let equals = document.querySelector(".equals")
+
+equals.addEventListener('click', loadSecondNum)
