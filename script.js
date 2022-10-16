@@ -2,6 +2,7 @@ let display = document.querySelector('.display')
 let firstNum = 0
 let secondNum = 0
 let selectedOperator = ''
+let resetSwitch = false
 let firstNumDisplayTest = document.querySelector('.firstNum')
 let secondNumDisplayTest = document.querySelector('.secondNum')
 let selectedOperatorDisplayTest = document.querySelector('.selectedOperator')
@@ -33,14 +34,17 @@ function clearFunc(){
 
 function resetDisplay() {
     display.textContent = 0
+    resetSwitch = false
 }
 
 let numbers = document.querySelectorAll('.num')
 
 numbers.forEach(item => {
     item.addEventListener('click', () => {
-        if (selectedOperator.length > 1) {
-            resetDisplay()
+        if (resetSwitch) {
+            if (selectedOperator.length > 1) {
+                resetDisplay()
+            }
         }
         updateDisplay(item.textContent)
     })
@@ -61,18 +65,26 @@ function loadFirstNum() {
 
 function addFunc(){
     loadFirstNum()
+    selectedOperator = 'add'
+    resetSwitch = true
     selectedOperatorDisplayTest.textContent = `add`
 }
 function subtractFunc(){
     loadFirstNum()
+    selectedOperator = 'subtract'
+    resetSwitch = true
     selectedOperatorDisplayTest.textContent = `subtract`
 }
 function multiplyFunc(){
     loadFirstNum()
+    selectedOperator = 'multiply'
+    resetSwitch = true
     selectedOperatorDisplayTest.textContent = `multiply`
 }
 function divideFunc(){
     loadFirstNum()
+    selectedOperator = 'divide'
+    resetSwitch = true
     selectedOperatorDisplayTest.textContent = `divide`
 }
 
