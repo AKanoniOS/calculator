@@ -1,14 +1,28 @@
+* {
+    background-color: rgb(230, 230, 230);
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
-    width: 400px;
-    height: 650px;
+    width: 270px;
+    height: 450px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    border-radius: 10px;
+
+    background-color: aliceblue;
 }
 
 .grid-item {
     width: 100%;
     height: 100%;
-    border: solid black;
 
     display: flex;
     justify-content: center;
@@ -16,9 +30,77 @@
 }
 
 .display {
-    grid-column-end: span 5;
+    grid-column-end: span 4;
+    border-radius: 10px;
+
+    background-color: aliceblue;
+    font-weight: bold;
+
+}
+
+.num {
+    height: 3em;
+    width: 3em;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: flex;
+    justify-self: center; 
+    align-self: center; 
+}
+.num:hover {
+    background-color: #bbb4;
+}
+
+.clear {
+    height: 3em;
+    width: 3em;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50%;
+    display: flex;
+    justify-self: center; 
+    align-self: center; 
+}
+
+.add,.subtract,.multiply,.divide {
+    height: 3em;
+    width: 3em;
+    background-color: rgb(93, 93, 93);
+    border-radius: 50%;
+    display: flex;
+    justify-self: center; 
+    align-self: center; 
+}
+.add:hover{
+    background-color: rgb(139, 139, 139)
+}
+.subtract:hover{
+    background-color: rgb(139, 139, 139)
+}
+.multiply:hover{
+    background-color: rgb(139, 139, 139)
+}
+.divide:hover{
+    background-color: rgb(139, 139, 139)
+}
+.clear:hover{
+    background-color: rgb(139, 139, 139)
 }
 
 .equals {
-    grid-row-end: span 2;
+    background-color: rgb(226, 178, 45);
+    border-radius: 5%;
+    display: flex;
+    justify-self: center; 
+    align-self: center; 
+
+    grid-column-end: span 4;
+
+    border-radius: 2em;
+
+    width: 88%;
+    height: 70%;
 }
+.equals:hover {
+    background-color: rgb(244, 207, 104);
+}
+
