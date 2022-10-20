@@ -93,10 +93,25 @@ function total(a,b) {
     }
 }
 
+function isWhole(n) {
+   var result = (n - Math.floor(n)) !== 0; 
+   
+  if (result)
+    return false;
+   else
+    return true;
+}
+
 function loadSecondNum() {
     secondNum = display.textContent
     newNum = total(firstNum,secondNum)
-    display.textContent = newNum
+
+    if (isWhole(newNum)) {
+        newNum = Math.trunc(newNum)
+        display.textContent = newNum
+    } else {
+        display.textContent = newNum
+    }
 }
 
 let equals = document.querySelector(".equals")
